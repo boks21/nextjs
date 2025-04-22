@@ -72,12 +72,14 @@ export async function fetchCardData() {
     const numberOfCustomers = Number(data[1][0].count ?? '0');
     const totalPaidInvoices = formatCurrency(data[2][0].paid ?? '0');
     const totalPendingInvoices = formatCurrency(data[2][0].pending ?? '0');
+    const someHardcoded = Number(26);
 
     return {
       numberOfCustomers,
       numberOfInvoices,
       totalPaidInvoices,
       totalPendingInvoices,
+      someHardcoded
     };
   } catch (error) {
     console.error('Database Error:', error);
